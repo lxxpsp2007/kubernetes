@@ -10,7 +10,7 @@ spec:
     name: php-fpm
   ports:      
     - name: http
-      port: 9000
+      port: 9006
       #targetPort: 8081
       #protocol: TCP
     #- port: 443
