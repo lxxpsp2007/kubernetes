@@ -10,7 +10,7 @@ spec:
     name: nginx
   ports:      
     - name: http
-      port: 88
+      port: 80
       #targetPort: 8081
       #protocol: TCP
     #- port: 443
