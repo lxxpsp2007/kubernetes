@@ -6,11 +6,18 @@ metadata:
     name: ng-svc-labels
 
 spec:
+  type: LoadBalancer
   selector:
-    name: nginx
+    name: ng
   ports:      
     - name: http
       port: 80
+  status:
+    loadBalancer:
+      ingress:
+        ip: 192.168.1.210
+        #hostname: C153
+
       #targetPort: 8081
       #protocol: TCP
     #- port: 443

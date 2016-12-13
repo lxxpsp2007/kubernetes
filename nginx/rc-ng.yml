@@ -8,11 +8,11 @@ metadata:
 spec:
   replicas: 2
   selector:
-    name: ng-nfs
+    name: ng
   template:
     metadata:
       labels:
-        name: ng-nfs
+        name: ng
     spec:
       volumes:
       - name: nfs
@@ -33,7 +33,7 @@ spec:
             #hostPort: 8081
         env:
           - name: php_server
-            value: 10.254.34.193
+            value: fpm-svc
           - name: port
             value: '9006'
         #  - name: port
