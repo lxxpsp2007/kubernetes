@@ -14,10 +14,19 @@ spec:
       labels:
         name: php-fpm
     spec:
+      volumes:
+      - name: nfs
+        nfs:
+          server: nfs
+          path: "/data/nfs"
+
       containers:
       - name: php-fpm
         image: devel:5000/php56
         imagePullPolicy: IfNotPresent
+        volumeMounts:
+          - name: nfs
+            mountPath: "/opt"
         ports:
           - name: php-fpm
             containerPort: 9006
@@ -25,3 +34,7 @@ spec:
         env:
           - name: fpm_port
             value: '9006'
+        resources:
+          limits:
+            cpu: 0.5
+            memory: 256Mi
