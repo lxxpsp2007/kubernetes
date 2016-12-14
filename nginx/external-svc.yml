@@ -1,0 +1,15 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: ng-extip-svc
+spec:
+  selector:
+    name: ng
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    #targetPort: 9376
+  externalIPs:
+  - 192.168.1.200
